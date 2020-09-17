@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebApp", "TestWebApp\TestWebApp.csproj", "{6297C5A0-E3B2-4421-9328-9BAE573F3329}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BD3EE92D-1AA7-4F60-B8F2-E90D753605B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{2201CD7B-1EA1-4CF1-BB85-8A00FFC7E502}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrowserTests", "BrowserTests\BrowserTests.csproj", "{D226597C-B726-49FD-98A6-05AAEC868145}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,17 @@ Global
 		{6297C5A0-E3B2-4421-9328-9BAE573F3329}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6297C5A0-E3B2-4421-9328-9BAE573F3329}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6297C5A0-E3B2-4421-9328-9BAE573F3329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2201CD7B-1EA1-4CF1-BB85-8A00FFC7E502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2201CD7B-1EA1-4CF1-BB85-8A00FFC7E502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2201CD7B-1EA1-4CF1-BB85-8A00FFC7E502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2201CD7B-1EA1-4CF1-BB85-8A00FFC7E502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D226597C-B726-49FD-98A6-05AAEC868145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D226597C-B726-49FD-98A6-05AAEC868145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D226597C-B726-49FD-98A6-05AAEC868145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D226597C-B726-49FD-98A6-05AAEC868145}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2201CD7B-1EA1-4CF1-BB85-8A00FFC7E502} = {BD3EE92D-1AA7-4F60-B8F2-E90D753605B6}
+		{D226597C-B726-49FD-98A6-05AAEC868145} = {BD3EE92D-1AA7-4F60-B8F2-E90D753605B6}
 	EndGlobalSection
 EndGlobal
