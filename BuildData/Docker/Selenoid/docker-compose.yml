@@ -6,7 +6,7 @@ services:
         image: "aerokube/selenoid:latest-release"
         #network_mode: bridge
         networks:
-            - selenide_in_teamcity
+            selenide_in_tc: null
         ports:
             - "4444:4444"
         volumes:
@@ -15,11 +15,13 @@ services:
             #- "/d/DockerProject/selenoid/video:/opt/selenoid/video/"
         environment: 
             - "enableVNC=true"
+        command: ["-container-network", "selenide_in_tc"]
     selenoid-ui:
+        container_name: "selenoid_ui"
         image: "aerokube/selenoid-ui"
         #network_mode: bridge
         networks:
-            - selenide_in_teamcity
+            selenide_in_tc: null
         links:
             - selenoid
         ports:
@@ -37,6 +39,6 @@ services:
 #            - "./ggr/config:/etc/grid-router:ro"
 
 networks:
-    selenide_in_teamcity:
+    selenide_in_tc:
         external:
             name: selenide_in_tc

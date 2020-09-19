@@ -53,13 +53,15 @@ namespace BrowserTests
             switch (this.opts)
             {
                 case ChromeOptions chromeOptions:
-                    chromeOptions.AddAdditionalCapability("enableVideo", true, true);
+                    //chromeOptions.AddAdditionalCapability("enableVideo", true, true);
                     chromeOptions.AddAdditionalCapability("enableVNC", true, true);
+                    //chromeOptions.AddAdditionalCapability("additionalNetworks", new string[]{"selenide_in_tc"}, true);
                     // chromeOptions.AddAdditionalCapability("applicationContainers", new string[] { "nginx" }, true);
                     break;
                 case FirefoxOptions firefoxOptions:
-                    firefoxOptions.AddAdditionalCapability("enableVideo", true, true);
+                    //firefoxOptions.AddAdditionalCapability("enableVideo", true, true);
                     firefoxOptions.AddAdditionalCapability("enableVNC", true, true);
+                   // firefoxOptions.AddAdditionalCapability("additionalNetworks", new string[]{"selenide_in_tc"}, true);
                     // firefoxOptions.AddAdditionalCapability("applicationContainers", new string[] { "nginx" }, true);
                     break;
             }

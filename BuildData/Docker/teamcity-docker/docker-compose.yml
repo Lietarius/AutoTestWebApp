@@ -1,0 +1,41 @@
+﻿version: '3.5'  
+   
+services:  
+    teamcity:  
+        container_name: teamcity_server
+        image: jetbrains/teamcity-server
+        volumes:  
+            - teamcity-server-datadir:/data/teamcity_server/datadir  
+            - teamcity-server-logs:/opt/teamcity/logs
+        networks:
+            - teamcity
+        ports:  
+            - 8111:8111  
+    teamcity-agent:  
+        container_name: teamcity_agent
+        user: root
+        build:
+            context: ./bin
+        volumes:  
+            - //var/run/docker.sock:/var/run/docker.sock
+            - "//opt/buildagent/work:/opt/buildagent/work"
+            - "//opt/buildagent/temp:/opt/buildagent/temp"
+            - "//opt/buildagent/tools:/opt/buildagent/tools"
+            - "//opt/buildagent/plugins:/opt/buildagent/plugins"
+            - "//opt/buildagent/system:/opt/buildagent/system"
+        links: 
+            - teamcity
+        networks:
+            - selenide_in_tc
+            - teamcity
+        environment:  
+            SERVER_URL: http://teamcity:8111  
+            
+networks:
+  selenide_in_tc:
+      name: selenide_in_tc
+  teamcity:
+   
+volumes:  
+    teamcity-server-datadir:  
+    teamcity-server-logs:  
