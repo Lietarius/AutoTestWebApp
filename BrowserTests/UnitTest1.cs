@@ -14,7 +14,7 @@ namespace BrowserTests
     {
         
         
-        string selenideURL = "http://localhost:4444/wd/hub";
+        string selenideURL = "http://selenoid:4444/wd/hub";
         
         private IWebDriver driver;
 
