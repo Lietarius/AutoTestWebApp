@@ -1,18 +1,12 @@
 version: "3"
 
 services: 
-#     nginx: 
-#         image: "nginx:latest"
-#         network_mode: bridge
-#         container_name: "nginx"
-#         ports:
-#             - "8888:80"
-#         volumes: 
-#             - ./SimpleServer/site:/usr/share/nginx/html
     selenoid:
         container_name: "selenoid"
         image: "aerokube/selenoid:latest-release"
-        network_mode: bridge
+        #network_mode: bridge
+        networks:
+            - selenide_in_teamcity
         ports:
             - "4444:4444"
         volumes:
@@ -23,7 +17,9 @@ services:
             - "enableVNC=true"
     selenoid-ui:
         image: "aerokube/selenoid-ui"
-        network_mode: bridge
+        #network_mode: bridge
+        networks:
+            - selenide_in_teamcity
         links:
             - selenoid
         ports:
@@ -39,3 +35,8 @@ services:
 #            - "4445:4444"
 #        volumes: 
 #            - "./ggr/config:/etc/grid-router:ro"
+
+networks:
+    selenide_in_teamcity:
+        external:
+            name: selenide_in_tc
